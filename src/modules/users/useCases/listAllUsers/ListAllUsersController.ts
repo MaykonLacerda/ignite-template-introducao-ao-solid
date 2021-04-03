@@ -13,7 +13,7 @@ class ListAllUsersController {
         this.listAllUsersUseCase.execute({ user_id: String(user_id) })
       );
     } catch (error) {
-      return response.status(400).json({ error });
+      return response.status(400).json({ error: { message: error.message } });
     }
   }
 }
